@@ -73,7 +73,6 @@ public class EnemyMovements : MonoBehaviour {
             Collider2D col = Physics2D.OverlapCircle(groundCheck.position, agroDistance, LayerMaskHelper.Player);
             if (col != null && Mathf.Abs(col.transform.position.y - groundCheck.position.y) < 1f)
             {
-                Debug.DrawLine(groundCheck.position , col.transform.position);
                 _target = col.transform;
                 isAgro = true;
             }
@@ -146,7 +145,6 @@ public class EnemyMovements : MonoBehaviour {
     protected void OnDie()
     {
         _animator.SetBool("Dying", true);
-        Debug.Log("I'm fucking diying !!!");
     }
 
     public void EndDie()
